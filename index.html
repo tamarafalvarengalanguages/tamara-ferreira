@@ -13,6 +13,8 @@
   --ink:#20201d;
   --cream:#f3efe5;
   --paper:#fbfaf6;
+  --forest:#344b3c;
+  --forest-hover:#26392d;
   --sage:#687463;
   --wine:#713d43;
   --line:#d8d2c6;
@@ -28,7 +30,7 @@ body{
   line-height:1.65;
 }
 
-h1,h2,h3,.serif{
+h1,h2,h3{
   font-family:Georgia,"Times New Roman",serif;
   font-weight:400;
 }
@@ -38,7 +40,7 @@ a{color:inherit}
 header{
   max-width:1200px;
   margin:auto;
-  padding:28px 40px;
+  padding:26px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -48,27 +50,48 @@ header{
 .brand{
   font-family:Georgia,"Times New Roman",serif;
   font-size:21px;
+  white-space:nowrap;
 }
 
 nav{
   display:flex;
-  gap:25px;
+  gap:23px;
   align-items:center;
   font-size:14px;
 }
 
-nav a{text-decoration:none}
-nav a:hover{opacity:.6}
+nav a{
+  text-decoration:none;
+}
 
-.languages{
+nav a:hover{opacity:.65}
+
+.language-switch{
+  display:flex;
+  gap:5px;
+  margin-left:5px;
+}
+
+.lang-btn{
+  border:0;
+  background:none;
   color:var(--sage);
-  font-size:13px;
+  cursor:pointer;
+  padding:4px;
+  font-size:12px;
+}
+
+.lang-btn.active{
+  color:var(--forest);
+  font-weight:bold;
+  text-decoration:underline;
+  text-underline-offset:4px;
 }
 
 .hero{
   max-width:1200px;
   margin:auto;
-  padding:105px 40px;
+  padding:100px 40px;
   display:grid;
   grid-template-columns:1.45fr 1fr;
   gap:80px;
@@ -98,28 +121,42 @@ h1{
 
 .buttons{
   display:flex;
-  gap:14px;
+  gap:13px;
   flex-wrap:wrap;
 }
 
 .button{
   display:inline-block;
-  padding:13px 22px;
-  border:1px solid var(--ink);
+  padding:14px 23px;
+  border:1px solid var(--forest);
   text-decoration:none;
   font-size:14px;
   transition:.2s;
 }
 
-.button:hover{opacity:.7}
-
 .button.primary{
-  background:var(--ink);
+  background:var(--forest);
   color:white;
+  border-color:var(--forest);
+}
+
+.button.primary:hover{
+  background:var(--forest-hover);
+  border-color:var(--forest-hover);
+  transform:translateY(-1px);
+}
+
+.button.secondary{
+  color:var(--forest);
+  background:transparent;
+}
+
+.button.secondary:hover{
+  background:#eef1ed;
 }
 
 .note{
-  border-left:1px solid var(--wine);
+  border-left:2px solid var(--forest);
   padding:25px 0 25px 30px;
 }
 
@@ -149,7 +186,7 @@ h1{
 .section h2{
   font-size:clamp(38px,5vw,55px);
   line-height:1.12;
-  max-width:800px;
+  max-width:850px;
   margin-bottom:45px;
 }
 
@@ -181,17 +218,17 @@ h1{
   margin-bottom:15px;
 }
 
-.card small{
-  color:var(--sage);
-}
+.card small{color:var(--sage)}
 
 .offer{
   max-width:1200px;
   margin:auto;
   padding:100px 40px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:90px;
+}
+
+.offer-header{
+  max-width:800px;
+  margin-bottom:55px;
 }
 
 .offer h2{
@@ -205,10 +242,17 @@ h1{
   font-size:18px;
 }
 
+.plan-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:60px;
+  align-items:start;
+}
+
 .offer-box{
   border:1px solid var(--line);
   padding:38px;
-  background:var(--paper);
+  background:white;
 }
 
 .offer-label{
@@ -218,17 +262,9 @@ h1{
   font-size:11px;
 }
 
-.price{
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:48px;
-  margin:10px 0 5px;
-}
-
-.per{color:var(--soft)}
-
 .features{
   list-style:none;
-  margin:30px 0;
+  margin:25px 0 30px;
   border-top:1px solid var(--line);
 }
 
@@ -237,17 +273,68 @@ h1{
   border-bottom:1px solid var(--line);
 }
 
+.price-area{
+  padding:10px 0;
+}
+
+.price-title{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+.price-sub{
+  color:var(--soft);
+  margin-bottom:25px;
+}
+
+.payment-options{
+  display:grid;
+  gap:12px;
+}
+
+.pay-button{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  text-decoration:none;
+  background:var(--forest);
+  color:white;
+  padding:16px 18px;
+  border-radius:2px;
+  transition:.2s;
+}
+
+.pay-button:hover{
+  background:var(--forest-hover);
+  transform:translateY(-1px);
+}
+
+.pay-button strong{
+  font-size:15px;
+}
+
+.pay-button span{
+  opacity:.8;
+  font-size:13px;
+}
+
+.booking-after{
+  margin-top:25px;
+  padding-top:25px;
+  border-top:1px solid var(--line);
+}
+
 .micro{
   font-size:12px;
   color:var(--soft);
-  margin-top:15px;
+  margin-top:13px;
 }
 
 .lab-grid{
   display:grid;
   grid-template-columns:1.15fr .85fr;
   gap:80px;
-  align-items:start;
 }
 
 .feature-project{
@@ -262,7 +349,6 @@ h1{
 
 .feature-project p{
   color:var(--soft);
-  max-width:600px;
 }
 
 .tags{
@@ -319,15 +405,20 @@ h1{
 }
 
 .about-small{
-  font-family:Arial,Helvetica,sans-serif;
   font-size:16px;
   color:var(--soft);
   margin-top:25px;
 }
 
 .booking{
+  background:var(--forest);
+  color:white;
   text-align:center;
-  padding:110px 30px;
+  padding:105px 30px;
+}
+
+.booking .eyebrow{
+  color:#cbd5cd;
 }
 
 .booking h2{
@@ -338,15 +429,25 @@ h1{
 .booking p{
   max-width:650px;
   margin:0 auto 32px;
-  color:var(--soft);
+  color:#e2e7e3;
   font-size:18px;
+}
+
+.booking .button{
+  background:white;
+  color:var(--forest);
+  border-color:white;
+  font-weight:bold;
+}
+
+.booking .button:hover{
+  background:var(--cream);
 }
 
 footer{
   max-width:1200px;
   margin:auto;
   padding:35px 40px;
-  border-top:1px solid var(--line);
   display:flex;
   justify-content:space-between;
   gap:20px;
@@ -354,16 +455,26 @@ footer{
 }
 
 footer a{
-  margin-left:18px;
   text-decoration:none;
+  color:var(--forest);
 }
 
 @media(max-width:850px){
-  header{padding:22px}
-  nav a:not(.booking-nav){display:none}
+  header{
+    padding:20px 22px;
+    align-items:flex-start;
+  }
+
+  nav{
+    gap:12px;
+  }
+
+  nav>a:not(.booking-nav){
+    display:none;
+  }
 
   .hero,
-  .offer,
+  .plan-grid,
   .lab-grid,
   .research,
   .about{
@@ -397,339 +508,430 @@ footer a{
 <body>
 
 <header>
-  <div class="brand">Tamara Ferreira</div>
 
-  <nav>
-    <a href="#learn">Learn</a>
-    <a href="#lab">Learning Lab</a>
-    <a href="#research">Research & Projects</a>
-    <a href="#about">About</a>
+<div class="brand">Tamara Ferreira</div>
 
-    <a class="booking-nav"
-       href="https://calendar.app.google/7niyPbrBo6UCTomY9"
-       target="_blank">
-      Book a session
-    </a>
+<nav>
+<a href="#learn" data-t="navLearn">Learn</a>
+<a href="#lab" data-t="navLab">Learning Lab</a>
+<a href="#research" data-t="navResearch">Research & Projects</a>
+<a href="#about" data-t="navAbout">About</a>
 
-    <span class="languages">PT · EN · FR</span>
-  </nav>
+<a class="booking-nav"
+href="https://calendar.app.google/7niyPbrBo6UCTomY9"
+target="_blank"
+data-t="navBook">
+Book a session
+</a>
+
+<div class="language-switch">
+<button class="lang-btn" onclick="setLanguage('pt')">PT</button>
+<span>·</span>
+<button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+<span>·</span>
+<button class="lang-btn" onclick="setLanguage('fr')">FR</button>
+</div>
+
+</nav>
 </header>
+
 
 <main>
 
 <section class="hero">
-  <div>
 
-    <div class="eyebrow">
-      Languages · Learning · Research
-    </div>
+<div>
 
-    <h1>
-      Communication across languages, cultures and borders.
-    </h1>
+<div class="eyebrow" data-t="heroEyebrow">
+Languages · Learning · Research
+</div>
 
-    <p class="intro">
-      Language education and learning experiences for people
-      building international academic, professional and personal lives.
-    </p>
+<h1 data-t="heroTitle">
+Communication across languages, cultures and borders.
+</h1>
 
-    <div class="buttons">
+<p class="intro" data-t="heroIntro">
+Language education and learning experiences for people building
+international academic, professional and personal lives.
+</p>
 
-      <a class="button primary"
-         href="https://calendar.app.google/7niyPbrBo6UCTomY9"
-         target="_blank">
-        Book a session
-      </a>
+<div class="buttons">
 
-      <a class="button" href="#learn">
-        Explore learning
-      </a>
+<a class="button primary"
+href="https://calendar.app.google/7niyPbrBo6UCTomY9"
+target="_blank"
+data-t="book">
+Book a session
+</a>
 
-    </div>
-  </div>
+<a class="button secondary"
+href="#learn"
+data-t="explore">
+Explore learning
+</a>
 
-  <aside class="note">
-    <p>
-      Learning a language is not simply about speaking differently.
-      It is about gaining access to new conversations, communities
-      and ways of seeing the world.
-    </p>
+</div>
+</div>
 
-    <span>Tamara Ferreira</span>
-  </aside>
+<aside class="note">
+
+<p data-t="quote">
+Learning a language is not simply about speaking differently.
+It is about gaining access to new conversations, communities
+and ways of seeing the world.
+</p>
+
+<span>Tamara Ferreira</span>
+
+</aside>
+
 </section>
 
 
 <section class="section cream" id="learn">
 
-  <div class="section-inner">
+<div class="section-inner">
 
-    <div class="eyebrow">Learn with me</div>
+<div class="eyebrow" data-t="learnEyebrow">
+Learn with me
+</div>
 
-    <h2>
-      Language learning for an international life.
-    </h2>
+<h2 data-t="learnTitle">
+Language learning for an international life.
+</h2>
 
-    <div class="cards">
+<div class="cards">
 
-      <article class="card">
-        <div class="card-number">01</div>
+<article class="card">
+<div class="card-number">01</div>
 
-        <h3>English</h3>
+<h3 data-t="englishTitle">English</h3>
 
-        <p>
-          Personalized English learning for adults who want
-          to communicate confidently across cultures and contexts.
-        </p>
+<p data-t="englishText">
+Personalized English learning for adults who want to communicate
+confidently across cultures and contexts.
+</p>
 
-        <small>Communication · Fluency · International life</small>
-      </article>
-
-
-      <article class="card">
-        <div class="card-number">02</div>
-
-        <h3>Professional & Academic English</h3>
-
-        <p>
-          Focused support for international work and study:
-          interviews, presentations, academic communication
-          and professional conversations.
-        </p>
-
-        <small>Business · Academia · International communication</small>
-      </article>
+<small data-t="englishTags">
+Communication · Fluency · International life
+</small>
+</article>
 
 
-      <article class="card">
-        <div class="card-number">03</div>
+<article class="card">
+<div class="card-number">02</div>
 
-        <h3>Brazilian Portuguese</h3>
+<h3 data-t="professionalTitle">
+Professional & Academic English
+</h3>
 
-        <p>
-          Brazilian Portuguese for international learners,
-          with particular experience supporting French-speaking students.
-        </p>
+<p data-t="professionalText">
+Focused support for international work and study: interviews,
+presentations, academic communication and professional conversations.
+</p>
 
-        <small>Language · Culture · Brazil</small>
-      </article>
+<small data-t="professionalTags">
+Business · Academia · International communication
+</small>
+</article>
 
-    </div>
-  </div>
+
+<article class="card">
+<div class="card-number">03</div>
+
+<h3 data-t="portugueseTitle">
+Brazilian Portuguese
+</h3>
+
+<p data-t="portugueseText">
+Brazilian Portuguese for international learners, with particular
+experience supporting French-speaking students.
+</p>
+
+<small data-t="portugueseTags">
+Language · Culture · Brazil
+</small>
+</article>
+
+</div>
+</div>
 </section>
 
 
 <section class="offer">
 
-  <div>
-    <div class="eyebrow">Private Learning</div>
+<div class="offer-header">
 
-    <h2>
-      A consistent learning rhythm, without a long-term contract.
-    </h2>
+<div class="eyebrow" data-t="privateEyebrow">
+Private Learning
+</div>
 
-    <p class="offer-description">
-      Individual sessions designed around your goals, interests
-      and real communication needs. Your learning plan can evolve
-      with your academic, professional and personal life.
-    </p>
-  </div>
+<h2 data-t="privateTitle">
+A consistent learning rhythm, without a long-term contract.
+</h2>
+
+<p class="offer-description" data-t="privateDescription">
+Individual sessions designed around your goals, interests and
+real communication needs.
+</p>
+
+</div>
 
 
-  <div class="offer-box">
+<div class="plan-grid">
 
-    <div class="offer-label">Monthly learning plan</div>
+<div class="offer-box">
 
-    <div class="price">US$120</div>
-    <div class="per">per month</div>
+<div class="offer-label" data-t="monthlyPlan">
+Monthly learning plan
+</div>
 
-    <ul class="features">
-      <li>4 private sessions</li>
-      <li>60 minutes per session</li>
-      <li>Personalized learning plan</li>
-      <li>Learning Hub resources</li>
-      <li>Monthly renewal</li>
-      <li>No long-term contract</li>
-    </ul>
+<ul class="features">
+<li data-t="feature1">4 private sessions per month</li>
+<li data-t="feature2">60 minutes per session</li>
+<li data-t="feature3">Personalized learning plan</li>
+<li data-t="feature4">Learning Hub resources</li>
+<li data-t="feature5">Monthly renewal</li>
+<li data-t="feature6">No long-term contract</li>
+</ul>
 
-    <a class="button primary"
-       href="https://calendar.app.google/7niyPbrBo6UCTomY9"
-       target="_blank">
-      Book a session
-    </a>
+<a class="button primary"
+href="https://calendar.app.google/7niyPbrBo6UCTomY9"
+target="_blank"
+data-t="startPlan">
+Start your monthly plan
+</a>
 
-    <p class="micro">
-      Payment instructions are sent after booking.
-    </p>
+<p class="micro" data-t="bookingNote">
+Choose an available time and tell me what you would like to work on.
+</p>
 
-  </div>
+</div>
+
+
+<div class="price-area">
+
+<div class="eyebrow" data-t="paymentEyebrow">
+Payment
+</div>
+
+<div class="price-title" data-t="chooseCurrency">
+Choose your currency
+</div>
+
+<p class="price-sub" data-t="paymentIntro">
+Secure payment options for the same monthly learning plan.
+</p>
+
+<div class="payment-options">
+
+<a class="pay-button"
+href="https://checkout.nubank.com.br/c52ncy9ibP14fxq5"
+target="_blank">
+<strong>Brasil · R$550</strong>
+<span data-t="pix">Pix / card →</span>
+</a>
+
+<a class="pay-button"
+href="https://wise.com/pay/r/1n8q8UcbJN6rP3g"
+target="_blank">
+<strong>Europe · €100</strong>
+<span>Wise →</span>
+</a>
+
+<a class="pay-button"
+href="https://wise.com/pay/r/-fKHxub68roIy6c"
+target="_blank">
+<strong>Switzerland · CHF 95</strong>
+<span>Wise →</span>
+</a>
+
+</div>
+
+<div class="booking-after">
+
+<p class="micro" data-t="paymentNote">
+Each option corresponds to the same monthly plan:
+4 private 60-minute sessions.
+</p>
+
+</div>
+
+</div>
+
+</div>
 </section>
 
 
 <section class="section cream" id="lab">
 
-  <div class="section-inner">
+<div class="section-inner">
 
-    <div class="eyebrow">Learning Lab</div>
+<div class="eyebrow">Learning Lab</div>
 
-    <h2>
-      Where teaching becomes learning design.
-    </h2>
+<h2 data-t="labTitle">
+Where teaching becomes learning design.
+</h2>
 
-    <div class="lab-grid">
+<div class="lab-grid">
 
-      <article class="feature-project">
+<article class="feature-project">
 
-        <h3>Le Portugais avec Tamara</h3>
+<h3>Le Portugais avec Tamara</h3>
 
-        <p>
-          A digital learning experience developed for French-speaking
-          learners of Brazilian Portuguese. The project brings together
-          curriculum design, language teaching, culture and independent
-          online learning.
-        </p>
+<p data-t="courseText">
+A digital learning experience developed for French-speaking learners
+of Brazilian Portuguese. The project brings together curriculum design,
+language teaching, culture and independent online learning.
+</p>
 
-        <div class="tags">
-          <span class="tag">Brazilian Portuguese</span>
-          <span class="tag">Digital Learning</span>
-          <span class="tag">Curriculum Design</span>
-          <span class="tag">Adult Education</span>
-        </div>
+<div class="tags">
+<span class="tag">Brazilian Portuguese</span>
+<span class="tag">Digital Learning</span>
+<span class="tag">Curriculum Design</span>
+<span class="tag">Adult Education</span>
+</div>
 
-      </article>
+</article>
 
 
-      <div>
+<div>
 
-        <article class="card">
-          <h3>Learning Resources</h3>
+<article class="card">
+<h3 data-t="resourcesTitle">Learning Resources</h3>
 
-          <p>
-            Selected activities, games and teaching materials
-            designed for meaningful language practice.
-          </p>
-        </article>
+<p data-t="resourcesText">
+Selected activities, games and teaching materials designed
+for meaningful language practice.
+</p>
+</article>
 
-        <article class="card">
-          <h3>Learning Design</h3>
+<article class="card">
+<h3 data-t="designTitle">Learning Design</h3>
 
-          <p>
-            Projects and experiments in course design,
-            digital learning and learner engagement.
-          </p>
-        </article>
+<p data-t="designText">
+Projects and experiments in course design, digital learning
+and learner engagement.
+</p>
+</article>
 
-      </div>
-
-    </div>
-  </div>
+</div>
+</div>
+</div>
 </section>
 
 
 <section class="section" id="research">
 
-  <div class="research">
+<div class="research">
 
-    <div>
-      <div class="eyebrow">Research & Projects</div>
+<div>
 
-      <h2>
-        Education, migration and belonging.
-      </h2>
-    </div>
+<div class="eyebrow" data-t="researchEyebrow">
+Research & Projects
+</div>
 
-    <div class="research-copy">
+<h2 data-t="researchTitle">
+Education, migration and belonging.
+</h2>
 
-      <p>
-        My academic interests sit at the intersection of education,
-        international mobility and inclusion.
-      </p>
+</div>
 
-      <p>
-        I am particularly interested in how migration and multilingual
-        environments shape learning, participation, professional
-        trajectories and people's sense of belonging.
-      </p>
+<div class="research-copy">
 
-      <div class="tags">
-        <span class="tag">Migration</span>
-        <span class="tag">Education</span>
-        <span class="tag">Multilingualism</span>
-        <span class="tag">Mobility</span>
-        <span class="tag">Inclusion</span>
-      </div>
+<p data-t="researchText1">
+My academic interests sit at the intersection of education,
+international mobility and inclusion.
+</p>
 
-    </div>
+<p data-t="researchText2">
+I am particularly interested in how migration and multilingual
+environments shape learning, participation, professional trajectories
+and people's sense of belonging.
+</p>
 
-  </div>
+<div class="tags">
+<span class="tag">Migration</span>
+<span class="tag">Education</span>
+<span class="tag">Multilingualism</span>
+<span class="tag">Mobility</span>
+<span class="tag">Inclusion</span>
+</div>
+
+</div>
+</div>
 </section>
 
 
 <section class="section cream" id="about">
 
-  <div class="about">
+<div class="about">
 
-    <div>
-      <div class="eyebrow">About</div>
+<div>
 
-      <h2>
-        Teacher.<br>
-        Learning designer.<br>
-        Researcher.
-      </h2>
-    </div>
+<div class="eyebrow" data-t="aboutEyebrow">
+About
+</div>
 
+<h2 data-t="aboutTitle">
+Teacher.<br>
+Learning designer.<br>
+Researcher.
+</h2>
 
-    <div>
+</div>
 
-      <p class="about-copy">
-        I'm Tamara, a Brazilian language educator and master's student
-        based in Europe. My work connects languages, education,
-        learning design and research across international contexts.
-      </p>
+<div>
 
-      <p class="about-small">
-        I work with adult learners navigating new languages,
-        professional environments, universities and cultures.
-        Alongside teaching, I develop learning materials and explore
-        questions around education, migration and international mobility.
-      </p>
+<p class="about-copy" data-t="aboutMain">
+I'm Tamara, a Brazilian language educator and master's student
+based in Europe. My work connects languages, education,
+learning design and research across international contexts.
+</p>
 
-      <div class="buttons" style="margin-top:30px">
+<p class="about-small" data-t="aboutSecond">
+I work with adult learners navigating new languages, professional
+environments, universities and cultures. Alongside teaching,
+I develop learning materials and explore questions around education,
+migration and international mobility.
+</p>
 
-        <a class="button"
-           href="https://www.linkedin.com/in/tamara-ferreira-alvarenga/"
-           target="_blank">
-          LinkedIn
-        </a>
+<div class="buttons" style="margin-top:30px">
 
-      </div>
+<a class="button secondary"
+href="https://www.linkedin.com/in/tamara-ferreira-alvarenga/"
+target="_blank">
+LinkedIn
+</a>
 
-    </div>
+</div>
 
-  </div>
+</div>
+</div>
 </section>
 
 
 <section class="booking">
 
-  <div class="eyebrow">Private learning</div>
+<div class="eyebrow" data-t="finalEyebrow">
+Private learning
+</div>
 
-  <h2>
-    Let's work together.
-  </h2>
+<h2 data-t="finalTitle">
+Let's work together.
+</h2>
 
-  <p>
-    Tell me what you want to achieve and we can build
-    a learning path around your language, academic
-    or professional goals.
-  </p>
+<p data-t="finalText">
+Tell me what you want to achieve and we can build a learning path
+around your language, academic or professional goals.
+</p>
 
-  <a class="button primary"
-     href="https://calendar.app.google/7niyPbrBo6UCTomY9"
-     target="_blank">
-    Book a private session
-  </a>
+<a class="button"
+href="https://calendar.app.google/7niyPbrBo6UCTomY9"
+target="_blank"
+data-t="bookPrivate">
+Book a private session
+</a>
 
 </section>
 
@@ -738,22 +940,294 @@ footer a{
 
 <footer>
 
-  <span>
-    © 2026 Tamara Ferreira
-  </span>
+<span>© 2026 Tamara Ferreira</span>
 
-  <span>
-    International Communication · Languages · Learning · Research
-  </span>
+<span>
+International Communication · Languages · Learning · Research
+</span>
 
-  <span>
-    <a href="https://www.linkedin.com/in/tamara-ferreira-alvarenga/"
-       target="_blank">
-      LinkedIn
-    </a>
-  </span>
+<span>
+<a href="https://www.linkedin.com/in/tamara-ferreira-alvarenga/"
+target="_blank">
+LinkedIn
+</a>
+</span>
 
 </footer>
+
+
+<script>
+
+const translations = {
+
+en:{
+navLearn:"Learn",
+navLab:"Learning Lab",
+navResearch:"Research & Projects",
+navAbout:"About",
+navBook:"Book a session",
+
+heroEyebrow:"Languages · Learning · Research",
+heroTitle:"Communication across languages, cultures and borders.",
+heroIntro:"Language education and learning experiences for people building international academic, professional and personal lives.",
+book:"Book a session",
+explore:"Explore learning",
+
+quote:"Learning a language is not simply about speaking differently. It is about gaining access to new conversations, communities and ways of seeing the world.",
+
+learnEyebrow:"Learn with me",
+learnTitle:"Language learning for an international life.",
+
+englishTitle:"English",
+englishText:"Personalized English learning for adults who want to communicate confidently across cultures and contexts.",
+englishTags:"Communication · Fluency · International life",
+
+professionalTitle:"Professional & Academic English",
+professionalText:"Focused support for international work and study: interviews, presentations, academic communication and professional conversations.",
+professionalTags:"Business · Academia · International communication",
+
+portugueseTitle:"Brazilian Portuguese",
+portugueseText:"Brazilian Portuguese for international learners, with particular experience supporting French-speaking students.",
+portugueseTags:"Language · Culture · Brazil",
+
+privateEyebrow:"Private Learning",
+privateTitle:"A consistent learning rhythm, without a long-term contract.",
+privateDescription:"Individual sessions designed around your goals, interests and real communication needs.",
+monthlyPlan:"Monthly learning plan",
+
+feature1:"4 private sessions per month",
+feature2:"60 minutes per session",
+feature3:"Personalized learning plan",
+feature4:"Learning Hub resources",
+feature5:"Monthly renewal",
+feature6:"No long-term contract",
+
+startPlan:"Start your monthly plan",
+bookingNote:"Choose an available time and tell me what you would like to work on.",
+
+paymentEyebrow:"Payment",
+chooseCurrency:"Choose your currency",
+paymentIntro:"Secure payment options for the same monthly learning plan.",
+pix:"Pix / card →",
+paymentNote:"Each option corresponds to the same monthly plan: 4 private 60-minute sessions.",
+
+labTitle:"Where teaching becomes learning design.",
+courseText:"A digital learning experience developed for French-speaking learners of Brazilian Portuguese. The project brings together curriculum design, language teaching, culture and independent online learning.",
+
+resourcesTitle:"Learning Resources",
+resourcesText:"Selected activities, games and teaching materials designed for meaningful language practice.",
+
+designTitle:"Learning Design",
+designText:"Projects and experiments in course design, digital learning and learner engagement.",
+
+researchEyebrow:"Research & Projects",
+researchTitle:"Education, migration and belonging.",
+researchText1:"My academic interests sit at the intersection of education, international mobility and inclusion.",
+researchText2:"I am particularly interested in how migration and multilingual environments shape learning, participation, professional trajectories and people's sense of belonging.",
+
+aboutEyebrow:"About",
+aboutTitle:"Teacher.<br>Learning designer.<br>Researcher.",
+aboutMain:"I'm Tamara, a Brazilian language educator and master's student based in Europe. My work connects languages, education, learning design and research across international contexts.",
+aboutSecond:"I work with adult learners navigating new languages, professional environments, universities and cultures. Alongside teaching, I develop learning materials and explore questions around education, migration and international mobility.",
+
+finalEyebrow:"Private learning",
+finalTitle:"Let's work together.",
+finalText:"Tell me what you want to achieve and we can build a learning path around your language, academic or professional goals.",
+bookPrivate:"Book a private session"
+},
+
+
+pt:{
+navLearn:"Aprenda comigo",
+navLab:"Learning Lab",
+navResearch:"Pesquisa & Projetos",
+navAbout:"Sobre",
+navBook:"Agendar uma aula",
+
+heroEyebrow:"Idiomas · Aprendizagem · Pesquisa",
+heroTitle:"Comunicação entre línguas, culturas e fronteiras.",
+heroIntro:"Ensino de idiomas e experiências de aprendizagem para pessoas construindo vidas acadêmicas, profissionais e pessoais internacionais.",
+book:"Agendar uma aula",
+explore:"Conheça as aulas",
+
+quote:"Aprender um idioma não é apenas falar de outra maneira. É ter acesso a novas conversas, comunidades e formas de enxergar o mundo.",
+
+learnEyebrow:"Aprenda comigo",
+learnTitle:"Idiomas para uma vida internacional.",
+
+englishTitle:"Inglês",
+englishText:"Aprendizagem personalizada para adultos que querem se comunicar com confiança em diferentes culturas e contextos.",
+englishTags:"Comunicação · Fluência · Vida internacional",
+
+professionalTitle:"Inglês Profissional & Acadêmico",
+professionalText:"Acompanhamento focado em trabalho e estudos internacionais: entrevistas, apresentações, comunicação acadêmica e situações profissionais.",
+professionalTags:"Business · Academia · Comunicação internacional",
+
+portugueseTitle:"Português Brasileiro",
+portugueseText:"Português como língua estrangeira para estudantes internacionais, com experiência especial no acompanhamento de francófonos.",
+portugueseTags:"Idioma · Cultura · Brasil",
+
+privateEyebrow:"Aulas individuais",
+privateTitle:"Um ritmo consistente de aprendizagem, sem contrato de longo prazo.",
+privateDescription:"Aulas individuais construídas a partir dos seus objetivos, interesses e necessidades reais de comunicação.",
+monthlyPlan:"Plano mensal",
+
+feature1:"4 aulas individuais por mês",
+feature2:"60 minutos por aula",
+feature3:"Plano de aprendizagem personalizado",
+feature4:"Recursos do Learning Hub",
+feature5:"Renovação mensal",
+feature6:"Sem contrato de longo prazo",
+
+startPlan:"Começar meu plano mensal",
+bookingNote:"Escolha um horário disponível e conte o que você gostaria de desenvolver.",
+
+paymentEyebrow:"Pagamento",
+chooseCurrency:"Escolha sua moeda",
+paymentIntro:"Opções seguras de pagamento para o mesmo plano mensal.",
+pix:"Pix / cartão →",
+paymentNote:"Todas as opções correspondem ao mesmo plano mensal: 4 aulas individuais de 60 minutos.",
+
+labTitle:"Onde ensinar também significa criar experiências de aprendizagem.",
+courseText:"Uma experiência digital de aprendizagem desenvolvida para francófonos aprendendo português brasileiro. O projeto reúne design curricular, ensino de idiomas, cultura e aprendizagem online independente.",
+
+resourcesTitle:"Recursos de aprendizagem",
+resourcesText:"Atividades, jogos e materiais selecionados para uma prática de idiomas significativa.",
+
+designTitle:"Learning Design",
+designText:"Projetos e experimentos em criação de cursos, aprendizagem digital e engajamento do aluno.",
+
+researchEyebrow:"Pesquisa & Projetos",
+researchTitle:"Educação, migração e pertencimento.",
+researchText1:"Meus interesses acadêmicos estão na interseção entre educação, mobilidade internacional e inclusão.",
+researchText2:"Tenho interesse especial em compreender como a migração e os contextos multilíngues influenciam aprendizagem, participação, trajetórias profissionais e o sentimento de pertencimento.",
+
+aboutEyebrow:"Sobre",
+aboutTitle:"Professora.<br>Learning designer.<br>Pesquisadora.",
+aboutMain:"Sou Tamara, educadora brasileira e estudante de mestrado na Europa. Meu trabalho conecta idiomas, educação, learning design e pesquisa em contextos internacionais.",
+aboutSecond:"Trabalho com adultos que navegam novos idiomas, ambientes profissionais, universidades e culturas. Além do ensino, desenvolvo materiais de aprendizagem e pesquiso questões ligadas à educação, migração e mobilidade internacional.",
+
+finalEyebrow:"Aprendizagem individual",
+finalTitle:"Vamos trabalhar juntos.",
+finalText:"Conte o que você quer alcançar e podemos construir um caminho de aprendizagem em torno dos seus objetivos linguísticos, acadêmicos ou profissionais.",
+bookPrivate:"Agendar uma aula"
+},
+
+
+fr:{
+navLearn:"Cours",
+navLab:"Learning Lab",
+navResearch:"Recherche & Projets",
+navAbout:"À propos",
+navBook:"Réserver un cours",
+
+heroEyebrow:"Langues · Apprentissage · Recherche",
+heroTitle:"Communiquer au-delà des langues, des cultures et des frontières.",
+heroIntro:"Enseignement des langues et expériences d'apprentissage pour celles et ceux qui construisent une vie académique, professionnelle et personnelle internationale.",
+book:"Réserver un cours",
+explore:"Découvrir les cours",
+
+quote:"Apprendre une langue, ce n'est pas simplement parler autrement. C'est accéder à de nouvelles conversations, communautés et façons de voir le monde.",
+
+learnEyebrow:"Apprendre avec moi",
+learnTitle:"Apprendre les langues pour une vie internationale.",
+
+englishTitle:"Anglais",
+englishText:"Un apprentissage personnalisé pour les adultes qui souhaitent communiquer avec confiance dans différents contextes et cultures.",
+englishTags:"Communication · Fluidité · Vie internationale",
+
+professionalTitle:"Anglais professionnel & académique",
+professionalText:"Un accompagnement ciblé pour le travail et les études à l'international : entretiens, présentations, communication académique et situations professionnelles.",
+professionalTags:"Business · Université · Communication internationale",
+
+portugueseTitle:"Portugais brésilien",
+portugueseText:"Portugais langue étrangère pour les apprenants internationaux, avec une expérience particulière auprès des francophones.",
+portugueseTags:"Langue · Culture · Brésil",
+
+privateEyebrow:"Cours individuels",
+privateTitle:"Un rythme d'apprentissage régulier, sans engagement à long terme.",
+privateDescription:"Des cours individuels construits autour de vos objectifs, de vos intérêts et de vos besoins réels de communication.",
+monthlyPlan:"Formule mensuelle",
+
+feature1:"4 cours individuels par mois",
+feature2:"60 minutes par cours",
+feature3:"Parcours d'apprentissage personnalisé",
+feature4:"Ressources du Learning Hub",
+feature5:"Renouvellement mensuel",
+feature6:"Sans engagement à long terme",
+
+startPlan:"Commencer ma formule mensuelle",
+bookingNote:"Choisissez un créneau disponible et indiquez-moi ce que vous souhaitez travailler.",
+
+paymentEyebrow:"Paiement",
+chooseCurrency:"Choisissez votre devise",
+paymentIntro:"Des options de paiement sécurisées pour la même formule mensuelle.",
+pix:"Pix / carte →",
+paymentNote:"Chaque option correspond à la même formule mensuelle : 4 cours individuels de 60 minutes.",
+
+labTitle:"Quand l'enseignement devient aussi conception pédagogique.",
+courseText:"Une expérience d'apprentissage numérique développée pour les francophones qui apprennent le portugais brésilien. Le projet réunit conception pédagogique, enseignement des langues, culture et apprentissage autonome en ligne.",
+
+resourcesTitle:"Ressources pédagogiques",
+resourcesText:"Une sélection d'activités, de jeux et de supports conçus pour une pratique linguistique porteuse de sens.",
+
+designTitle:"Learning Design",
+designText:"Projets et expérimentations autour de la conception de cours, de l'apprentissage numérique et de l'engagement des apprenants.",
+
+researchEyebrow:"Recherche & Projets",
+researchTitle:"Éducation, migration et appartenance.",
+researchText1:"Mes intérêts académiques se situent à l'intersection de l'éducation, de la mobilité internationale et de l'inclusion.",
+researchText2:"Je m'intéresse particulièrement à la manière dont la migration et les environnements multilingues façonnent l'apprentissage, la participation, les trajectoires professionnelles et le sentiment d'appartenance.",
+
+aboutEyebrow:"À propos",
+aboutTitle:"Enseignante.<br>Learning designer.<br>Chercheuse.",
+aboutMain:"Je suis Tamara, enseignante brésilienne et étudiante en master en Europe. Mon travail relie les langues, l'éducation, la conception pédagogique et la recherche dans des contextes internationaux.",
+aboutSecond:"J'accompagne des adultes qui évoluent entre nouvelles langues, environnements professionnels, universités et cultures. Parallèlement à l'enseignement, je développe des ressources pédagogiques et j'explore des questions liées à l'éducation, à la migration et à la mobilité internationale.",
+
+finalEyebrow:"Cours individuels",
+finalTitle:"Travaillons ensemble.",
+finalText:"Parlez-moi de vos objectifs et construisons un parcours d'apprentissage adapté à vos besoins linguistiques, académiques ou professionnels.",
+bookPrivate:"Réserver un cours"
+}
+
+};
+
+
+function setLanguage(lang){
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-t]").forEach(element => {
+
+    const key = element.getAttribute("data-t");
+
+    if(translations[lang][key]){
+      element.innerHTML = translations[lang][key];
+    }
+
+  });
+
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  const buttons = document.querySelectorAll(".lang-btn");
+
+  if(lang === "pt") buttons[0].classList.add("active");
+  if(lang === "en") buttons[1].classList.add("active");
+  if(lang === "fr") buttons[2].classList.add("active");
+
+  localStorage.setItem("tamara-language",lang);
+}
+
+
+const savedLanguage = localStorage.getItem("tamara-language");
+
+if(savedLanguage){
+  setLanguage(savedLanguage);
+}
+
+</script>
 
 </body>
 </html>
