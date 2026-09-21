@@ -1,225 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Tamara Ferreira | Languages, Learning & Research</title>
+<title>Tamara Ferreira | Languages, Learning & Research</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
 
-    :root {
-      --ink: #20201d;
-      --cream: #f5f1e8;
-      --paper: #fbfaf6;
-      --sage: #687463;
-      --wine: #713d43;
-      --line: #d8d2c6;
-    }
+:root{
+  --ink:#20201d;
+  --cream:#f3efe5;
+  --paper:#fbfaf6;
+  --sage:#687463;
+  --wine:#713d43;
+  --line:#d8d2c6;
+  --soft:#66625b;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--paper);
-      color: var(--ink);
-      line-height: 1.6;
-    }
+html{scroll-behavior:smooth}
 
-    h1, h2, h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 400;
-    }
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.65;
+}
 
-    header {
-      max-width: 1200px;
-      margin: auto;
-      padding: 28px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--line);
-    }
+h1,h2,h3,.serif{
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+}
 
-    .brand {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 20px;
-    }
+a{color:inherit}
 
-    nav {
-      display: flex;
-      gap: 25px;
-      align-items: center;
-      font-size: 14px;
-    }
+header{
+  max-width:1200px;
+  margin:auto;
+  padding:28px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid var(--line);
+}
 
-    nav a {
-      text-decoration: none;
-      color: var(--ink);
-    }
+.brand{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:21px;
+}
 
-    .languages {
-      color: var(--sage);
-      font-size: 13px;
-    }
+nav{
+  display:flex;
+  gap:25px;
+  align-items:center;
+  font-size:14px;
+}
 
-    .hero {
-      max-width: 1200px;
-      margin: auto;
-      padding: 110px 40px 100px;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
+nav a{text-decoration:none}
+nav a:hover{opacity:.6}
 
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-      color: var(--sage);
-      margin-bottom: 22px;
-    }
+.languages{
+  color:var(--sage);
+  font-size:13px;
+}
 
-    h1 {
-      font-size: clamp(48px, 6vw, 78px);
-      line-height: 1.03;
-      margin-bottom: 30px;
-    }
+.hero{
+  max-width:1200px;
+  margin:auto;
+  padding:105px 40px;
+  display:grid;
+  grid-template-columns:1.45fr 1fr;
+  gap:80px;
+  align-items:center;
+}
 
-    .intro {
-      max-width: 650px;
-      font-size: 19px;
-      color: #55534e;
-      margin-bottom: 38px;
-    }
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:12px;
+  color:var(--sage);
+  margin-bottom:22px;
+}
 
-    .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
+h1{
+  font-size:clamp(48px,6vw,78px);
+  line-height:1.04;
+  margin-bottom:30px;
+}
 
-    .button {
-      display: inline-block;
-      padding: 13px 22px;
-      border: 1px solid var(--ink);
-      text-decoration: none;
-      color: var(--ink);
-      font-size: 14px;
-    }
+.intro{
+  max-width:680px;
+  font-size:19px;
+  color:#55534e;
+  margin-bottom:35px;
+}
 
-    .button.primary {
-      background: var(--ink);
-      color: white;
-    }
+.buttons{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
 
-    .note {
-      border-left: 1px solid var(--wine);
-      padding: 25px 0 25px 30px;
-    }
+.button{
+  display:inline-block;
+  padding:13px 22px;
+  border:1px solid var(--ink);
+  text-decoration:none;
+  font-size:14px;
+  transition:.2s;
+}
 
-    .note p {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 25px;
-      line-height: 1.4;
-    }
+.button:hover{opacity:.7}
 
-    .note span {
-      display: block;
-      margin-top: 18px;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--sage);
-    }
+.button.primary{
+  background:var(--ink);
+  color:white;
+}
 
-    .section {
-      padding: 85px 40px;
-    }
+.note{
+  border-left:1px solid var(--wine);
+  padding:25px 0 25px 30px;
+}
 
-    .section-inner {
-      max-width: 1200px;
-      margin: auto;
-    }
+.note p{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:25px;
+  line-height:1.4;
+}
 
-    .section h2 {
-      font-size: 42px;
-      margin-bottom: 45px;
-    }
+.note span{
+  display:block;
+  margin-top:18px;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:var(--sage);
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
+.section{padding:90px 40px}
+.cream{background:var(--cream)}
 
-    .card {
-      border-top: 1px solid var(--ink);
-      padding: 25px 5px;
-    }
+.section-inner{
+  max-width:1200px;
+  margin:auto;
+}
 
-    .card h3 {
-      font-size: 26px;
-      margin-bottom: 15px;
-    }
+.section h2{
+  font-size:clamp(38px,5vw,55px);
+  line-height:1.12;
+  max-width:800px;
+  margin-bottom:45px;
+}
 
-    .card p {
-      color: #65615a;
-    }
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
 
-    .cream {
-      background: var(--cream);
-    }
+.card{
+  border-top:1px solid var(--ink);
+  padding:25px 4px;
+}
 
-    .booking {
-      text-align: center;
-      padding: 100px 30px;
-    }
+.card-number{
+  color:var(--sage);
+  font-size:12px;
+  letter-spacing:1px;
+  margin-bottom:25px;
+}
 
-    .booking h2 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
+.card h3{
+  font-size:27px;
+  margin-bottom:15px;
+}
 
-    .booking p {
-      max-width: 620px;
-      margin: 0 auto 30px;
-      color: #5e5a53;
-    }
+.card p{
+  color:var(--soft);
+  margin-bottom:15px;
+}
 
-    footer {
-      max-width: 1200px;
-      margin: auto;
-      padding: 35px 40px;
-      border-top: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-    }
+.card small{
+  color:var(--sage);
+}
 
-    @media (max-width: 800px) {
-      nav a:not(.languages) {
-        display: none;
-      }
+.offer{
+  max-width:1200px;
+  margin:auto;
+  padding:100px 40px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:90px;
+}
 
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 70px;
-      }
+.offer h2{
+  font-size:52px;
+  line-height:1.1;
+  margin-bottom:25px;
+}
 
-      .cards {
-        grid-template-columns: 1fr;
-      }
+.offer-description{
+  color:var(--soft);
+  font-size:18px;
+}
 
-      h1 {
-        font-size: 48px;
-      }
-    }
-  </style>
+.offer-box{
+  border:1px solid var(--line);
+  padding:38px;
+  background:var(--paper);
+}
+
+.offer-label{
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:var(--sage);
+  font-size:11px;
+}
+
+.price{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:48px;
+  margin:10px 0 5px;
+}
+
+.per{color:var(--soft)}
+
+.features{
+  list-style:none;
+  margin:30px 0;
+  border-top:1px solid var(--line);
+}
+
+.features li{
+  padding:11px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.micro{
+  font-size:12px;
+  color:var(--soft);
+  margin-top:15px;
+}
+
+.lab-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:80px;
+  align-items:start;
+}
+
+.feature-project{
+  border-top:1px solid var(--ink);
+  padding-top:28px;
+}
+
+.feature-project h3{
+  font-size:36px;
+  margin-bottom:16px;
+}
+
+.feature-project p{
+  color:var(--soft);
+  max-width:600px;
+}
+
+.tags{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:25px;
+}
+
+.tag{
+  border:1px solid var(--line);
+  padding:6px 10px;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+.research{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:.75fr 1.25fr;
+  gap:90px;
+}
+
+.research h2{
+  font-size:52px;
+  line-height:1.1;
+}
+
+.research-copy p{
+  color:var(--soft);
+  font-size:18px;
+  margin-bottom:20px;
+}
+
+.about{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1.25fr;
+  gap:90px;
+}
+
+.about h2{
+  font-size:52px;
+  line-height:1.1;
+}
+
+.about-copy{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:25px;
+  line-height:1.5;
+}
+
+.about-small{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  color:var(--soft);
+  margin-top:25px;
+}
+
+.booking{
+  text-align:center;
+  padding:110px 30px;
+}
+
+.booking h2{
+  font-size:55px;
+  margin-bottom:20px;
+}
+
+.booking p{
+  max-width:650px;
+  margin:0 auto 32px;
+  color:var(--soft);
+  font-size:18px;
+}
+
+footer{
+  max-width:1200px;
+  margin:auto;
+  padding:35px 40px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:13px;
+}
+
+footer a{
+  margin-left:18px;
+  text-decoration:none;
+}
+
+@media(max-width:850px){
+  header{padding:22px}
+  nav a:not(.booking-nav){display:none}
+
+  .hero,
+  .offer,
+  .lab-grid,
+  .research,
+  .about{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+
+  .hero{padding:70px 25px}
+  .section{padding:70px 25px}
+  .offer{padding:70px 25px}
+
+  .cards{grid-template-columns:1fr}
+
+  h1{font-size:48px}
+
+  .offer h2,
+  .research h2,
+  .about h2,
+  .booking h2{
+    font-size:40px;
+  }
+
+  footer{
+    flex-direction:column;
+    padding:30px 25px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -232,19 +404,22 @@
     <a href="#lab">Learning Lab</a>
     <a href="#research">Research & Projects</a>
     <a href="#about">About</a>
-    <a href="https://calendar.app.google/7niyPbrBo6UCTomY9">
+
+    <a class="booking-nav"
+       href="https://calendar.app.google/7niyPbrBo6UCTomY9"
+       target="_blank">
       Book a session
     </a>
+
     <span class="languages">PT · EN · FR</span>
   </nav>
 </header>
 
-
 <main>
 
 <section class="hero">
-
   <div>
+
     <div class="eyebrow">
       Languages · Learning · Research
     </div>
@@ -254,19 +429,22 @@
     </h1>
 
     <p class="intro">
-      I teach languages and design learning experiences for people
+      Language education and learning experiences for people
       building international academic, professional and personal lives.
     </p>
 
     <div class="buttons">
+
       <a class="button primary"
-         href="https://calendar.app.google/7niyPbrBo6UCTomY9">
-         Book a session
+         href="https://calendar.app.google/7niyPbrBo6UCTomY9"
+         target="_blank">
+        Book a session
       </a>
 
       <a class="button" href="#learn">
         Explore learning
       </a>
+
     </div>
   </div>
 
@@ -279,7 +457,6 @@
 
     <span>Tamara Ferreira</span>
   </aside>
-
 </section>
 
 
@@ -296,118 +473,241 @@
     <div class="cards">
 
       <article class="card">
+        <div class="card-number">01</div>
+
         <h3>English</h3>
+
         <p>
-          Individual learning for communication, confidence
-          and life across cultures.
+          Personalized English learning for adults who want
+          to communicate confidently across cultures and contexts.
         </p>
+
+        <small>Communication · Fluency · International life</small>
       </article>
 
+
       <article class="card">
+        <div class="card-number">02</div>
+
         <h3>Professional & Academic English</h3>
+
         <p>
-          Communication for international work, interviews,
-          presentations and academic environments.
+          Focused support for international work and study:
+          interviews, presentations, academic communication
+          and professional conversations.
         </p>
+
+        <small>Business · Academia · International communication</small>
       </article>
 
+
       <article class="card">
+        <div class="card-number">03</div>
+
         <h3>Brazilian Portuguese</h3>
+
         <p>
-          Portuguese as a foreign language with culture,
-          communication and Brazilian life at its centre.
+          Brazilian Portuguese for international learners,
+          with particular experience supporting French-speaking students.
         </p>
+
+        <small>Language · Culture · Brazil</small>
       </article>
 
     </div>
-
   </div>
-
 </section>
 
 
-<section class="section" id="lab">
+<section class="offer">
+
+  <div>
+    <div class="eyebrow">Private Learning</div>
+
+    <h2>
+      A consistent learning rhythm, without a long-term contract.
+    </h2>
+
+    <p class="offer-description">
+      Individual sessions designed around your goals, interests
+      and real communication needs. Your learning plan can evolve
+      with your academic, professional and personal life.
+    </p>
+  </div>
+
+
+  <div class="offer-box">
+
+    <div class="offer-label">Monthly learning plan</div>
+
+    <div class="price">US$120</div>
+    <div class="per">per month</div>
+
+    <ul class="features">
+      <li>4 private sessions</li>
+      <li>60 minutes per session</li>
+      <li>Personalized learning plan</li>
+      <li>Learning Hub resources</li>
+      <li>Monthly renewal</li>
+      <li>No long-term contract</li>
+    </ul>
+
+    <a class="button primary"
+       href="https://calendar.app.google/7niyPbrBo6UCTomY9"
+       target="_blank">
+      Book a session
+    </a>
+
+    <p class="micro">
+      Payment instructions are sent after booking.
+    </p>
+
+  </div>
+</section>
+
+
+<section class="section cream" id="lab">
 
   <div class="section-inner">
 
     <div class="eyebrow">Learning Lab</div>
 
     <h2>
-      Resources, courses and learning experiments.
+      Where teaching becomes learning design.
     </h2>
 
-    <div class="cards">
+    <div class="lab-grid">
 
-      <article class="card">
+      <article class="feature-project">
+
         <h3>Le Portugais avec Tamara</h3>
+
         <p>
-          A digital Portuguese learning experience created
-          for French-speaking learners.
+          A digital learning experience developed for French-speaking
+          learners of Brazilian Portuguese. The project brings together
+          curriculum design, language teaching, culture and independent
+          online learning.
         </p>
+
+        <div class="tags">
+          <span class="tag">Brazilian Portuguese</span>
+          <span class="tag">Digital Learning</span>
+          <span class="tag">Curriculum Design</span>
+          <span class="tag">Adult Education</span>
+        </div>
+
       </article>
 
-      <article class="card">
-        <h3>Learning Resources</h3>
-        <p>
-          Activities, games and materials designed for
-          meaningful language practice.
-        </p>
-      </article>
 
-      <article class="card">
-        <h3>Learning Design</h3>
-        <p>
-          Selected projects exploring curriculum design,
-          digital learning and adult education.
-        </p>
-      </article>
+      <div>
+
+        <article class="card">
+          <h3>Learning Resources</h3>
+
+          <p>
+            Selected activities, games and teaching materials
+            designed for meaningful language practice.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Learning Design</h3>
+
+          <p>
+            Projects and experiments in course design,
+            digital learning and learner engagement.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="research">
+
+  <div class="research">
+
+    <div>
+      <div class="eyebrow">Research & Projects</div>
+
+      <h2>
+        Education, migration and belonging.
+      </h2>
+    </div>
+
+    <div class="research-copy">
+
+      <p>
+        My academic interests sit at the intersection of education,
+        international mobility and inclusion.
+      </p>
+
+      <p>
+        I am particularly interested in how migration and multilingual
+        environments shape learning, participation, professional
+        trajectories and people's sense of belonging.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Migration</span>
+        <span class="tag">Education</span>
+        <span class="tag">Multilingualism</span>
+        <span class="tag">Mobility</span>
+        <span class="tag">Inclusion</span>
+      </div>
 
     </div>
 
   </div>
-
 </section>
 
 
-<section class="section cream" id="research">
+<section class="section cream" id="about">
 
-  <div class="section-inner">
+  <div class="about">
 
-    <div class="eyebrow">Research & Projects</div>
+    <div>
+      <div class="eyebrow">About</div>
 
-    <h2>
-      Education, migration and belonging.
-    </h2>
+      <h2>
+        Teacher.<br>
+        Learning designer.<br>
+        Researcher.
+      </h2>
+    </div>
 
-    <p class="intro">
-      My academic work explores learning and inclusion in multilingual
-      and international contexts, with particular interest in migration,
-      mobility and participation.
-    </p>
+
+    <div>
+
+      <p class="about-copy">
+        I'm Tamara, a Brazilian language educator and master's student
+        based in Europe. My work connects languages, education,
+        learning design and research across international contexts.
+      </p>
+
+      <p class="about-small">
+        I work with adult learners navigating new languages,
+        professional environments, universities and cultures.
+        Alongside teaching, I develop learning materials and explore
+        questions around education, migration and international mobility.
+      </p>
+
+      <div class="buttons" style="margin-top:30px">
+
+        <a class="button"
+           href="https://www.linkedin.com/in/tamara-ferreira-alvarenga/"
+           target="_blank">
+          LinkedIn
+        </a>
+
+      </div>
+
+    </div>
 
   </div>
-
-</section>
-
-
-<section class="section" id="about">
-
-  <div class="section-inner">
-
-    <div class="eyebrow">About</div>
-
-    <h2>
-      Teacher. Learning designer. Researcher.
-    </h2>
-
-    <p class="intro">
-      I'm Tamara, a Brazilian language educator based in Europe.
-      My work connects language teaching, learning design and research
-      around international education and mobility.
-    </p>
-
-  </div>
-
 </section>
 
 
@@ -420,13 +720,15 @@
   </h2>
 
   <p>
-    Individual online sessions adapted to your language,
-    academic or professional goals.
+    Tell me what you want to achieve and we can build
+    a learning path around your language, academic
+    or professional goals.
   </p>
 
   <a class="button primary"
-     href="https://calendar.app.google/7niyPbrBo6UCTomY9">
-     Book a private session
+     href="https://calendar.app.google/7niyPbrBo6UCTomY9"
+     target="_blank">
+    Book a private session
   </a>
 
 </section>
@@ -435,11 +737,22 @@
 
 
 <footer>
-  <span>© 2026 Tamara Ferreira</span>
+
+  <span>
+    © 2026 Tamara Ferreira
+  </span>
 
   <span>
     International Communication · Languages · Learning · Research
   </span>
+
+  <span>
+    <a href="https://www.linkedin.com/in/tamara-ferreira-alvarenga/"
+       target="_blank">
+      LinkedIn
+    </a>
+  </span>
+
 </footer>
 
 </body>
