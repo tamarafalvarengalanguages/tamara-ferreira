@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tamara Ferreira | Languages, Learning & Research</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --ink: #20201d;
+      --cream: #f5f1e8;
+      --paper: #fbfaf6;
+      --sage: #687463;
+      --wine: #713d43;
+      --line: #d8d2c6;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    header {
+      max-width: 1200px;
+      margin: auto;
+      padding: 28px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .languages {
+      color: var(--sage);
+      font-size: 13px;
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      padding: 110px 40px 100px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      color: var(--sage);
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 6vw, 78px);
+      line-height: 1.03;
+      margin-bottom: 30px;
+    }
+
+    .intro {
+      max-width: 650px;
+      font-size: 19px;
+      color: #55534e;
+      margin-bottom: 38px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 22px;
+      border: 1px solid var(--ink);
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .button.primary {
+      background: var(--ink);
+      color: white;
+    }
+
+    .note {
+      border-left: 1px solid var(--wine);
+      padding: 25px 0 25px 30px;
+    }
+
+    .note p {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      line-height: 1.4;
+    }
+
+    .note span {
+      display: block;
+      margin-top: 18px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--sage);
+    }
+
+    .section {
+      padding: 85px 40px;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-size: 42px;
+      margin-bottom: 45px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      border-top: 1px solid var(--ink);
+      padding: 25px 5px;
+    }
+
+    .card h3 {
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      color: #65615a;
+    }
+
+    .cream {
+      background: var(--cream);
+    }
+
+    .booking {
+      text-align: center;
+      padding: 100px 30px;
+    }
+
+    .booking h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .booking p {
+      max-width: 620px;
+      margin: 0 auto 30px;
+      color: #5e5a53;
+    }
+
+    footer {
+      max-width: 1200px;
+      margin: auto;
+      padding: 35px 40px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+      nav a:not(.languages) {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 70px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">Tamara Ferreira</div>
+
+  <nav>
+    <a href="#learn">Learn</a>
+    <a href="#lab">Learning Lab</a>
+    <a href="#research">Research & Projects</a>
+    <a href="#about">About</a>
+    <a href="https://calendar.app.google/7niyPbrBo6UCTomY9">
+      Book a session
+    </a>
+    <span class="languages">PT · EN · FR</span>
+  </nav>
+</header>
+
+
+<main>
+
+<section class="hero">
+
+  <div>
+    <div class="eyebrow">
+      Languages · Learning · Research
+    </div>
+
+    <h1>
+      Communication across languages, cultures and borders.
+    </h1>
+
+    <p class="intro">
+      I teach languages and design learning experiences for people
+      building international academic, professional and personal lives.
+    </p>
+
+    <div class="buttons">
+      <a class="button primary"
+         href="https://calendar.app.google/7niyPbrBo6UCTomY9">
+         Book a session
+      </a>
+
+      <a class="button" href="#learn">
+        Explore learning
+      </a>
+    </div>
+  </div>
+
+  <aside class="note">
+    <p>
+      Learning a language is not simply about speaking differently.
+      It is about gaining access to new conversations, communities
+      and ways of seeing the world.
+    </p>
+
+    <span>Tamara Ferreira</span>
+  </aside>
+
+</section>
+
+
+<section class="section cream" id="learn">
+
+  <div class="section-inner">
+
+    <div class="eyebrow">Learn with me</div>
+
+    <h2>
+      Language learning for an international life.
+    </h2>
+
+    <div class="cards">
+
+      <article class="card">
+        <h3>English</h3>
+        <p>
+          Individual learning for communication, confidence
+          and life across cultures.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Professional & Academic English</h3>
+        <p>
+          Communication for international work, interviews,
+          presentations and academic environments.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Brazilian Portuguese</h3>
+        <p>
+          Portuguese as a foreign language with culture,
+          communication and Brazilian life at its centre.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="lab">
+
+  <div class="section-inner">
+
+    <div class="eyebrow">Learning Lab</div>
+
+    <h2>
+      Resources, courses and learning experiments.
+    </h2>
+
+    <div class="cards">
+
+      <article class="card">
+        <h3>Le Portugais avec Tamara</h3>
+        <p>
+          A digital Portuguese learning experience created
+          for French-speaking learners.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Learning Resources</h3>
+        <p>
+          Activities, games and materials designed for
+          meaningful language practice.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Learning Design</h3>
+        <p>
+          Selected projects exploring curriculum design,
+          digital learning and adult education.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="section cream" id="research">
+
+  <div class="section-inner">
+
+    <div class="eyebrow">Research & Projects</div>
+
+    <h2>
+      Education, migration and belonging.
+    </h2>
+
+    <p class="intro">
+      My academic work explores learning and inclusion in multilingual
+      and international contexts, with particular interest in migration,
+      mobility and participation.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="section" id="about">
+
+  <div class="section-inner">
+
+    <div class="eyebrow">About</div>
+
+    <h2>
+      Teacher. Learning designer. Researcher.
+    </h2>
+
+    <p class="intro">
+      I'm Tamara, a Brazilian language educator based in Europe.
+      My work connects language teaching, learning design and research
+      around international education and mobility.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="booking">
+
+  <div class="eyebrow">Private learning</div>
+
+  <h2>
+    Let's work together.
+  </h2>
+
+  <p>
+    Individual online sessions adapted to your language,
+    academic or professional goals.
+  </p>
+
+  <a class="button primary"
+     href="https://calendar.app.google/7niyPbrBo6UCTomY9">
+     Book a private session
+  </a>
+
+</section>
+
+</main>
+
+
+<footer>
+  <span>© 2026 Tamara Ferreira</span>
+
+  <span>
+    International Communication · Languages · Learning · Research
+  </span>
+</footer>
+
+</body>
+</html>
